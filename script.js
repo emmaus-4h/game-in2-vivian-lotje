@@ -23,14 +23,14 @@ const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
 
-var spelerX = 200; // x-positie van speler
-var spelerY = 100; // y-positie van speler
+var speler1X = 200; // x-positie van speler
+var speler1Y = 100; // y-positie van speler
 
-var kogelX = 800;    // x-positie van kogel
-var kogelY = 500;    // y-positie van kogel
+var speler2X = 800;    // x-positie van kogel
+var speler2Y = 500;    // y-positie van kogel
 
-var vijandX = 0;   // x-positie van vijand
-var vijandY = 0;   // y-positie van vijand
+var balX = 0;   // x-positie van vijand
+var balY = 0;   // y-positie van vijand
 
 var score = 0; // aantal behaalde punten
 
@@ -92,7 +92,7 @@ var tekenSpeler = function(x, y) {
 /**
  * Updatet globale variabelen met positie van vijand of tegenspeler
  */
-var beweegVijand = function() {
+var beweegbal = function() {
     
 };
 
@@ -100,7 +100,7 @@ var beweegVijand = function() {
 /**
  * Updatet globale variabelen met positie van kogel of bal
  */
-var beweegKogel = function() {
+var beweegSpeler1= function() {
 
 };
 
@@ -109,7 +109,7 @@ var beweegKogel = function() {
  * Kijkt wat de toetsen/muis etc zijn.
  * Updatet globale variabele spelerX en spelerY
  */
-var beweegSpeler = function() {
+var beweegSpeler2 = function() {
 
 };
 
@@ -118,7 +118,7 @@ var beweegSpeler = function() {
  * Zoekt uit of de vijand is geraakt
  * @returns {boolean} true als vijand is geraakt
  */
-var checkVijandGeraakt = function() {
+var checkSpeler1Geraakt = function() {
 
   return false;
 };
@@ -129,7 +129,7 @@ var checkVijandGeraakt = function() {
  * bijvoorbeeld door botsing met vijand
  * @returns {boolean} true als speler is geraakt
  */
-var checkSpelerGeraakt = function() {
+var checkSpeler2Geraakt = function() {
     
   return false;
 };
