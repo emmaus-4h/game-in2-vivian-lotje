@@ -11,7 +11,8 @@
  */
 
 
-
+/*640 is midden van X*/
+/*360 is midden van Y*/
 
 /* ********************************************* */
 /* globale variabelen die je gebruikt in je game */
@@ -25,13 +26,14 @@ var spelStatus = SPELEN;
 var spelerX = 200; // x-positie van speler
 var spelerY = 100; // y-positie van speler
 
-var kogelX = 0;    // x-positie van kogel
-var kogelY = 0;    // y-positie van kogel
+var kogelX = 800;    // x-positie van kogel
+var kogelY = 500;    // y-positie van kogel
 
 var vijandX = 0;   // x-positie van vijand
 var vijandY = 0;   // y-positie van vijand
 
 var score = 0; // aantal behaalde punten
+
 
 
 
@@ -46,8 +48,10 @@ var score = 0; // aantal behaalde punten
  * Tekent het speelveld
  */
 var tekenVeld = function () {
-  fill("purple");
+  fill(35,110,0);
   rect(20, 20, width - 2 * 20, height - 2 * 20);
+ 
+  
 };
 
 
@@ -68,7 +72,8 @@ var tekenVijand = function(x, y) {
  * @param {number} y y-coördinaat
  */
 var tekenKogel = function(x, y) {
-
+fill ('white')
+ellipse (x, y, 75, 75)
 
 };
 
@@ -80,7 +85,7 @@ var tekenKogel = function(x, y) {
  */
 var tekenSpeler = function(x, y) {
   fill("white");
-  ellipse(x, y, 50, 50);
+  ellipse(x, y, 75, 75);
 };
 
 
@@ -151,6 +156,7 @@ function setup() {
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
   background('blue');
+  
 }
 
 
