@@ -60,7 +60,7 @@ var tekenVeld = function () {
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
-var tekenVijand = function(x, y) {
+var tekenBal = function(x, y) {
     
 
 };
@@ -71,7 +71,7 @@ var tekenVijand = function(x, y) {
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
-var tekenKogel = function(x, y) {
+var tekenSpeler1 = function(x, y) {
 fill ('white')
 ellipse (x, y, 75, 75)
 
@@ -83,7 +83,7 @@ ellipse (x, y, 75, 75)
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
-var tekenSpeler = function(x, y) {
+var tekenSpeler2 = function(x, y) {
   fill("white");
   ellipse(x, y, 75, 75);
 };
@@ -92,7 +92,7 @@ var tekenSpeler = function(x, y) {
 /**
  * Updatet globale variabelen met positie van vijand of tegenspeler
  */
-var beweegbal = function() {
+var beweegBal = function() {
     
 };
 
@@ -168,24 +168,24 @@ function setup() {
 function draw() {
   switch (spelStatus) {
     case SPELEN:
-      beweegVijand();
-      beweegKogel();
-      beweegSpeler();
-      
-      if (checkVijandGeraakt()) {
+      beweegBal();
+      beweegSpeler1();
+      beweegSpeler2();
+
+      if (checkSpeler1Geraakt()) {
         // punten erbij
         // nieuwe vijand maken
       }
       
-      if (checkSpelerGeraakt()) {
+      if (checkSpeler2Geraakt()) {
         // leven eraf of gezondheid verlagen
         // eventueel: nieuwe speler maken
       }
 
       tekenVeld();
-      tekenVijand(vijandX, vijandY);
-      tekenKogel(kogelX, kogelY);
-      tekenSpeler(spelerX, spelerY);
+      tekenBal(balX, balY);
+      tekenSpeler1(speler1X, speler1Y);
+      tekenSpeler2(speler2X, speler2Y);
 
       if (checkGameOver()) {
         spelStatus = GAMEOVER;
