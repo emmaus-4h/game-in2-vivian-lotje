@@ -23,6 +23,8 @@ const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
 
+const KEY_LEFT = 37;
+
 var speler1X = 200; // x-positie van speler
 var speler1Y = 100; // y-positie van speler
 
@@ -101,7 +103,9 @@ var beweegBal = function() {
  * Updatet globale variabelen met positie van kogel of bal
  */
 var beweegSpeler1= function() {
-
+ if(keyIsDown(KEY_LEFT)) {
+   speler1X = speler1X - 1;
+ }
 };
 
 
