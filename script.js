@@ -23,7 +23,10 @@ const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
 
-const KEY_LEFT = 37;
+const KEY_LEFT = 65;
+const KEY_RIGHT = 68;
+const KEY_UP = 87;
+const KEY_DOWN = 83;
 
 var speler1X = 200; // x-positie van speler
 var speler1Y = 100; // y-positie van speler
@@ -103,9 +106,18 @@ var beweegBal = function() {
  * Updatet globale variabelen met positie van kogel of bal
  */
 var beweegSpeler1= function() {
- if(keyIsDown(KEY_LEFT)) {
-   speler1X = speler1X - 1;
- }
+ if (keyIsDown(KEY_LEFT)) {
+  speler1X = speler1X-4;
+}
+if (keyIsDown(KEY_RIGHT)) {
+   speler1X = speler1X+4;
+}
+if (keyIsDown(KEY_UP)) {
+  speler1Y = speler1Y-4;
+}
+if (keyIsDown(KEY_DOWN)){
+  speler1Y = speler1Y+4;
+}
 };
 
 
@@ -197,3 +209,6 @@ function draw() {
       break;
   }
 }
+
+
+
