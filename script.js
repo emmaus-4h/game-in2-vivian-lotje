@@ -23,14 +23,14 @@ const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
 
-var speler1X = 200; // x-positie van speler
-var speler1Y = 100; // y-positie van speler
+var spelerX = 100; // x-positie van speler
+var spelerY = 300; // y-positie van speler
 
-var speler2X = 800;    // x-positie van kogel
-var speler2Y = 500;    // y-positie van kogel
+var kogelX = 1080;    // x-positie van kogel
+var kogelY = 300;    // y-positie van kogel
 
-var balX = 0;   // x-positie van vijand
-var balY = 0;   // y-positie van vijand
+var vijandX = 0;   // x-positie van vijand
+var vijandY = 0;   // y-positie van vijand
 
 var score = 0; // aantal behaalde punten
 
@@ -73,7 +73,7 @@ var tekenVijand = function(x, y) {
  */
 var tekenKogel = function(x, y) {
 fill ('white')
-ellipse (x, y, 75, 75)
+rect (x, y, 50, 200)
 
 };
 
@@ -85,14 +85,14 @@ ellipse (x, y, 75, 75)
  */
 var tekenSpeler = function(x, y) {
   fill("white");
-  ellipse(x, y, 75, 75);
+  rect(x, y, 50, 200);
 };
 
 
 /**
  * Updatet globale variabelen met positie van vijand of tegenspeler
  */
-var beweegbal = function() {
+var beweegVijand = function() {
     
 };
 
@@ -100,7 +100,7 @@ var beweegbal = function() {
 /**
  * Updatet globale variabelen met positie van kogel of bal
  */
-var beweegSpeler1= function() {
+var beweegKogel = function() {
 
 };
 
@@ -109,7 +109,7 @@ var beweegSpeler1= function() {
  * Kijkt wat de toetsen/muis etc zijn.
  * Updatet globale variabele spelerX en spelerY
  */
-var beweegSpeler2 = function() {
+var beweegSpeler = function() {
 
 };
 
@@ -118,7 +118,7 @@ var beweegSpeler2 = function() {
  * Zoekt uit of de vijand is geraakt
  * @returns {boolean} true als vijand is geraakt
  */
-var checkSpeler1Geraakt = function() {
+var checkVijandGeraakt = function() {
 
   return false;
 };
@@ -129,7 +129,7 @@ var checkSpeler1Geraakt = function() {
  * bijvoorbeeld door botsing met vijand
  * @returns {boolean} true als speler is geraakt
  */
-var checkSpeler2Geraakt = function() {
+var checkSpelerGeraakt = function() {
     
   return false;
 };
