@@ -28,14 +28,14 @@ const KEY_RIGHT = 68;
 const KEY_UP = 87;
 const KEY_DOWN = 83;
 
-var speler1X = 200; // x-positie van speler
-var speler1Y = 100; // y-positie van speler
+var speler1X = 100; // x-positie van speler
+var speler1Y = 300; // y-positie van speler
 
-var speler2X = 800;    // x-positie van kogel
-var speler2Y = 500;    // y-positie van kogel
+var speler2X = 1000;    // x-positie van kogel
+var speler2Y = 300;    // y-positie van kogel
 
-var balX = 0;   // x-positie van vijand
-var balY = 0;   // y-positie van vijand
+var balX = 640;   // x-positie van vijand
+var balY = 360;   // y-positie van vijand
 
 var score = 0; // aantal behaalde punten
 
@@ -78,7 +78,7 @@ var tekenBal = function(x, y) {
  */
 var tekenSpeler1 = function(x, y) {
 fill ('white')
-ellipse (x, y, 75, 75)
+rect (x, y, 50, 200)
 
 };
 
@@ -90,7 +90,7 @@ ellipse (x, y, 75, 75)
  */
 var tekenSpeler2 = function(x, y) {
   fill("white");
-  ellipse(x, y, 75, 75);
+  rect(x, y, 50, 200);
 };
 
 
