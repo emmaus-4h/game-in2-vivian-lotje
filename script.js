@@ -26,11 +26,11 @@ var spelStatus = SPELEN;
 var spelerX = 100; // x-positie van speler
 var spelerY = 300; // y-positie van speler
 
-var kogelX = 1080;    // x-positie van kogel
-var kogelY = 300;    // y-positie van kogel
+var kogelX = 0;    // x-positie van kogel
+var kogelY = 0;    // y-positie van kogel
 
-var vijandX = 0;   // x-positie van vijand
-var vijandY = 0;   // y-positie van vijand
+var vijandX = 1100;   // x-positie van vijand
+var vijandY = 300;   // y-positie van vijand
 
 var score = 0; // aantal behaalde punten
 
@@ -48,7 +48,7 @@ var score = 0; // aantal behaalde punten
  * Tekent het speelveld
  */
 var tekenVeld = function () {
-  fill(35,110,0);
+  fill(193,222,246);
   rect(20, 20, width - 2 * 20, height - 2 * 20);
  
   
@@ -61,7 +61,10 @@ var tekenVeld = function () {
  * @param {number} y y-coördinaat
  */
 var tekenVijand = function(x, y) {
-    
+
+  fill(25,96,156);
+  rect (x,y,50,200);  
+
 
 };
 
@@ -71,29 +74,47 @@ var tekenVijand = function(x, y) {
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
-var tekenKogel = function(x, y) {
-fill ('white')
-rect (x, y, 50, 200)
-
+var tekenSpeler = function(x, y) {
+  fill(25,96,156);
+  rect(x, y, 50, 200);
 };
-
 
 /**
  * Tekent de speler
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
-var tekenSpeler = function(x, y) {
-  fill("white");
-  rect(x, y, 50, 200);
+
+var tekenKogel = function(x, y) {
+fill(80,80,90)
+ellipse(640,360,70,70)
+
 };
+/**
+ * Tekent de kogel of de bal
+ * @param {number} x x-coördinaat
+ * @param {number} y y-coördinaat
+ */
 
 
 /**
  * Updatet globale variabelen met positie van vijand of tegenspeler
  */
 var beweegVijand = function() {
-    
+
+     if (keyIsDown(LEFT_ARROW)) {
+    vijandX = vijandX - 6;
+  }
+  if (keyIsDown(RIGHT_ARROW)) {
+    vijandX = vijandX + 6;
+  }
+  if (keyIsDown(UP_ARROW)) { 
+  vijandY = vijandY - 6;
+
+  }
+  if (keyIsDown(DOWN_ARROW)) {
+    vijandY = vijandY + 6;
+  }
 };
 
 
@@ -101,6 +122,7 @@ var beweegVijand = function() {
  * Updatet globale variabelen met positie van kogel of bal
  */
 var beweegKogel = function() {
+
 
 };
 
@@ -110,7 +132,20 @@ var beweegKogel = function() {
  * Updatet globale variabele spelerX en spelerY
  */
 var beweegSpeler = function() {
+ 
+ if (keyIsDown(65)) {
+    spelerX = spelerX - 6;
+  }
+  if (keyIsDown(68)) {
+    spelerX = spelerX + 6;
+  }
+  if (keyIsDown(87)) { 
+  spelerY = spelerY - 6;
 
+  }
+  if (keyIsDown(83)) {
+    spelerY = spelerY + 6;
+  }
 };
 
 
@@ -155,7 +190,7 @@ function setup() {
   createCanvas(1280, 720);
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('blue');
+  background(205,218,229);
   
 }
 
