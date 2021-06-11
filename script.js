@@ -36,11 +36,7 @@ var vijandY = 300;   // y-positie van vijand
 
 
 
-var balX = 640;   // x-positie van vijand
-var balY = 360;   // y-positie van vijand
-
-
-var score = 0; // aantal behaalde punten
+ // aantal behaalde punten
 
 
 
@@ -76,10 +72,7 @@ var tekenVijand = function(x, y) {
   };
 
 
-var tekenBal = function(x, y) {
-    
 
-};
 
 
 /**
@@ -246,7 +239,7 @@ function draw() {
       }
 
       tekenVeld();
-      tekenBal(balX, balY);
+      tekenKogel(kogelX, kogelY);
       tekenVijand (vijandX, vijandY);
       tekenSpeler(spelerX, spelerY);
 
