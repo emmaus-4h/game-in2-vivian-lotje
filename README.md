@@ -9,8 +9,10 @@ Gemaakt door:
 
 Basis: uitleg, spelen, afgaan en punten
 - [x] maak index.html, style.css en script.js met canvas
-- [ ] teken speler
-- [ ] beweeg speler
+- [x] teken speler
+- [x] beweeg speler
+- [x] balletje maken
+- [x] balletje bewegen
 - [ ] spelers op 1 helft houden
 - [ ] punten op scherm zetten
 - [ ] punten kunnen scoren
