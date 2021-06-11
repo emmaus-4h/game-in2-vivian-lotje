@@ -1,6 +1,5 @@
 /// @ts-check
 /// <reference path=".gitpod/p5.global-mode.d.ts" />
-"use strict";
 
 /* Game opdracht
    Informatica - Emmauscollege Rotterdam
@@ -23,7 +22,7 @@ const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
 
-<<<<<<< HEAD
+
 var spelerX = 100; // x-positie van speler
 var spelerY = 300; // y-positie van speler
 
@@ -32,21 +31,14 @@ var kogelY = 0;    // y-positie van kogel
 
 var vijandX = 1100;   // x-positie van vijand
 var vijandY = 300;   // y-positie van vijand
-=======
-const KEY_LEFT = 65;
-const KEY_RIGHT = 68;
-const KEY_UP = 87;
-const KEY_DOWN = 83;
 
-var speler1X = 100; // x-positie van speler
-var speler1Y = 300; // y-positie van speler
 
-var speler2X = 1000;    // x-positie van kogel
-var speler2Y = 300;    // y-positie van kogel
+
+
 
 var balX = 640;   // x-positie van vijand
 var balY = 360;   // y-positie van vijand
->>>>>>> origin/master
+
 
 var score = 0; // aantal behaalde punten
 
@@ -76,16 +68,16 @@ var tekenVeld = function () {
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
-<<<<<<< HEAD
+
 var tekenVijand = function(x, y) {
 
   fill(25,96,156);
   rect (x,y,50,200);  
+  };
 
-=======
+
 var tekenBal = function(x, y) {
     
->>>>>>> origin/master
 
 };
 
@@ -95,35 +87,30 @@ var tekenBal = function(x, y) {
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
-<<<<<<< HEAD
+
 var tekenSpeler = function(x, y) {
   fill(25,96,156);
   rect(x, y, 50, 200);
-=======
-var tekenSpeler1 = function(x, y) {
-fill ('white')
-rect (x, y, 50, 200)
-
->>>>>>> origin/master
 };
+
+
+
 
 /**
  * Tekent de speler
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
-<<<<<<< HEAD
+
 
 var tekenKogel = function(x, y) {
 fill(80,80,90)
-ellipse(640,360,70,70)
-
-=======
-var tekenSpeler2 = function(x, y) {
-  fill("white");
-  rect(x, y, 50, 200);
->>>>>>> origin/master
+ellipse(640,360,70,70); 
 };
+
+
+
+
 /**
  * Tekent de kogel of de bal
  * @param {number} x x-coördinaat
@@ -134,7 +121,7 @@ var tekenSpeler2 = function(x, y) {
 /**
  * Updatet globale variabelen met positie van vijand of tegenspeler
  */
-<<<<<<< HEAD
+
 var beweegVijand = function() {
 
      if (keyIsDown(LEFT_ARROW)) {
@@ -150,36 +137,22 @@ var beweegVijand = function() {
   if (keyIsDown(DOWN_ARROW)) {
     vijandY = vijandY + 6;
   }
-=======
+}
+
 var beweegBal = function() {
     
->>>>>>> origin/master
+
 };
 
 
 /**
  * Updatet globale variabelen met positie van kogel of bal
  */
-<<<<<<< HEAD
+
 var beweegKogel = function() {
 
+}
 
-=======
-var beweegSpeler1= function() {
- if (keyIsDown(KEY_LEFT)) {
-  speler1X = speler1X-4;
-}
-if (keyIsDown(KEY_RIGHT)) {
-   speler1X = speler1X+4;
-}
-if (keyIsDown(KEY_UP)) {
-  speler1Y = speler1Y-4;
-}
-if (keyIsDown(KEY_DOWN)){
-  speler1Y = speler1Y+4;
-}
->>>>>>> origin/master
-};
 
 
 /**
@@ -258,24 +231,24 @@ function setup() {
 function draw() {
   switch (spelStatus) {
     case SPELEN:
-      beweegBal();
-      beweegSpeler1();
-      beweegSpeler2();
+      beweegVijand();
+      beweegKogel();
+      beweegSpeler();
 
-      if (checkSpeler1Geraakt()) {
+      if (checkVijandGeraakt()) {
         // punten erbij
         // nieuwe vijand maken
       }
       
-      if (checkSpeler2Geraakt()) {
+      if (checkSpelerGeraakt()) {
         // leven eraf of gezondheid verlagen
         // eventueel: nieuwe speler maken
       }
 
       tekenVeld();
       tekenBal(balX, balY);
-      tekenSpeler1(speler1X, speler1Y);
-      tekenSpeler2(speler2X, speler2Y);
+      tekenVijand (vijandX, vijandY);
+      tekenSpeler(spelerX, spelerY);
 
       if (checkGameOver()) {
         spelStatus = GAMEOVER;
