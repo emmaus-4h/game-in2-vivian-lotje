@@ -140,7 +140,7 @@ if(kogelX > width - opp || kogelX < opp) {
 if (kogelY > height - opp || kogelY < opp) {
   kogelYSpeed = - kogelYSpeed;
 }
-if 
+
 };
 
 
