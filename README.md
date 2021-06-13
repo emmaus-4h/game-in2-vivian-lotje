@@ -13,7 +13,7 @@ Basis: uitleg, spelen, afgaan en punten
 - [x] beweeg speler
 - [x] balletje maken
 - [x] balletje bewegen
-- [ ] spelers op 1 helft houden
+- [x] spelers op 1 helft houden
 - [ ] punten op scherm zetten
 - [ ] punten kunnen scoren
 - [ ] uitlegscherm
