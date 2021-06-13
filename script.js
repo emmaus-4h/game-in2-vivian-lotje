@@ -40,7 +40,6 @@ var opp = 50;
 /*      functies die je gebruikt in je game      */
 /* ********************************************* */
 
-
 /**
  * Tekent het speelveld
  */
