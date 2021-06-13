@@ -31,8 +31,8 @@ var vijandY = 300;   // y-positie van vijand
 
 var kogelX = 630;    // x-positie van kogel
 var kogelY = 100;    // y-positie van kogel
-var kogelXSpeed = 20;
-var kogelYSpeed = 20;
+var kogelXSpeed = 8;
+var kogelYSpeed = 8;
 var opp = 50;
 
 
@@ -134,15 +134,22 @@ var beweegKogel = function() {
 
 kogelX += kogelXSpeed;
 kogelY += kogelYSpeed;
+
+if (kogelX < vijandX + 50 && kogelX > vijandX && kogelY > vijandY && kogelY < vijandY + 200){
+  kogelXSpeed = - kogelXSpeed
+}
+if (kogelX < spelerX + 50 && kogelX > spelerX && kogelY > spelerY && kogelY < spelerY + 200){
+  kogelXSpeed = - kogelXSpeed
+} 
+
+
 if(kogelX > width - opp || kogelX < opp) {
   kogelXSpeed = - kogelXSpeed; 
 }
 if (kogelY > height - opp || kogelY < opp) {
   kogelYSpeed = - kogelYSpeed;
-}
-
+} 
 };
-
 
 
 /**
@@ -172,7 +179,7 @@ var beweegSpeler = function() {
  * @returns {boolean} true als vijand is geraakt
  */
 var checkVijandGeraakt = function() {
-
+if 
   return false;
 };
 
